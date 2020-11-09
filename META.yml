@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:                WebService-Livedoor-SpamChampuru-DNSBL
-version:             0.01
+version:             0.02
 abstract:            Perl interface of SpamChampuru DNSBL WebService
 license:             ~
 author:              

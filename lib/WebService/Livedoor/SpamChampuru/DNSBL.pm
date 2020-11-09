@@ -10,13 +10,25 @@ use IO::Select;
 
 WebService::Livedoor::SpamChampuru::DNSBL - Perl interface of SpamChampuru DNSBL WebService
 
+=head1 DESCRIPTION
+
+Checks if an IP has recently been used for sending spams, via spam-champuru (spam-champloo) DNSBL service (beta).
+
+Spam-champuru DNSBL holds list of IPs which have been reported as sources of spams by various services running at livedoor.com.
+
+The result may not be suitable for filtering mails, as this service is mainly intended for checking blog comments/trackbacks or bbs posts.
+
+* livedoor.com is not responsible for appropriateness of the result, nor for any harms caused by the use of the result.
+
+* The service is in a beta status, and may at any time become unavailable.
+
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 my $DNSBL_DOMAIN = "dnsbl.spam-champuru.livedoor.com";
 my $DNSBL_ANS = "127.0.0.2";
@@ -50,10 +62,12 @@ sub new {
 
 =head2 lookup
 
-Sends a DNS query to SpamChampuru DNSBL Server and checks if $ip_addr is classified as a source of spam.
+Sends a DNS query to SpamChampuru DNSBL server and checks if $ip_addr is classified as a source of spam.
 C<lookup> returns 1 for SPAM, 0 for HAM.
 
   my $res = $dnsbl->lookup($ip_addr);
+
+lookup('192.0.2.1') should always return 1 (spam), as SpamChampuru DNSBL uses this IP as a test IP.
 
 =cut
 
@@ -117,7 +131,7 @@ Kensuke Kaneko, C<< <k-kaneko at livedoor.jp> >>
 
 =head1 SEE ALSO
 
-L<http://spam-champuru.livedoor.com/> (Japanese text only)
+L<http://spam-champuru.livedoor.com/dnsbl/> (Japanese text only)
 
 L<Net::DNSBLLookup>
 

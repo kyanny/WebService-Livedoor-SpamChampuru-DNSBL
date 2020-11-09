@@ -1,13 +1,15 @@
 WebService-Livedoor-SpamChampuru-DNSBL
 
-Checks if an IP has recently been used for sending spams, using DNSBL server at dnsbl.spam-champuru.livedoor.com.
 
-dnsbl.spam-champuru.livedoor.com holds IPs which have been reported as sources of spams by various services running at livedoor.com.
+Checks if an IP has recently been used for sending spams, via spam-champuru (spam-champloo) DNSBL service (beta).
 
-The list of IPs are mainly collected from blog, bbs and wiki services. (Should work well for checking spam trackbacks/comments for blogs, but may not suit for filtering mails).
+Spam-champuru DNSBL holds list of IPs which have been reported as sources of spams by various services running at livedoor.com.
 
-* Livedoor.com is not responsible for appropriateness of the result, nor for any harms caused by the use of the result.
+The result may not be suitable for filtering mails, as this service is mainly intended for checking blog comments/trackbacks or bbs posts.
 
+* livedoor.com is not responsible for appropriateness of the result, nor for any harms caused by the use of the result.
+
+* The service is in a beta status, and may at any time become unavailable.
 
 INSTALLATION
 
